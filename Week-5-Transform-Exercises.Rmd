@@ -1,4 +1,4 @@
----
+ ---
 title: "Transform Data"
 autohor: 'Joseph Randolph'
 date: 2019-09-24
@@ -65,7 +65,7 @@ Use Boolean operators to return only the rows that contain:
 * Names that are one of Acura, Lexus, or Yugo
 
 ```{r}
-
+filter(babynames, name=="Sue",sex=="M")
 ```
 
 ## Help Me
