@@ -1,4 +1,4 @@
- ---
+---
 title: "Transform Data"
 autohor: 'Joseph Randolph'
 date: 2019-09-24
@@ -54,6 +54,7 @@ filter(babynames, name=="Sea")
 
 ```{r}
 filter(babynames, prop>=0.08)
+filter(babynames, name %in% starts_with("J"))
 ```
 
 ## Your Turn 3
@@ -65,7 +66,10 @@ Use Boolean operators to return only the rows that contain:
 * Names that are one of Acura, Lexus, or Yugo
 
 ```{r}
-filter(babynames, name=="Sue",sex=="M")
+filter( babynames, sex=='M' & name== "Sue")
+filter( babynames, sex=='M', name== "Sue")
+
+filter(babynames,n== 5|6)
 ```
 
 ## Help Me
@@ -74,6 +78,7 @@ What is the smallest value of n?
 What is the largest?
 
 ```{r}
+arrange(babynames, n, prop)
 
 ```
 
@@ -86,6 +91,7 @@ Use `%>%` to write a sequence of functions that:
 3. Arranges the results so that the most popular names are near the top.
 
 ```{r}
+babynames%>%filter(sex=='F'& year=="2017")%>%select(name, n )%>%arrange(prop)
 
 ```
 
@@ -97,7 +103,7 @@ Use `%>%` to write a sequence of functions that:
 
 ```{r}
 
-
+babynames
 ```
 
 ## Your Turn 6
